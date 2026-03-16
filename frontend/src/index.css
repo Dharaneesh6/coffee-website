@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif; }
+  * { box-sizing: border-box; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-apple-blue text-white font-medium px-6 py-3 rounded-full 
+           hover:bg-apple-blue-hover active:scale-[0.98] transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-apple-gray text-apple-gray-dark font-medium px-6 py-3 rounded-full 
+           hover:bg-gray-200 active:scale-[0.98] transition-all duration-200;
+  }
+  .btn-ghost {
+    @apply text-apple-blue font-medium px-4 py-2 rounded-full 
+           hover:bg-blue-50 transition-all duration-200;
+  }
+  .card {
+    @apply bg-white rounded-2xl shadow-card overflow-hidden transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:shadow-apple-lg hover:-translate-y-1;
+  }
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-200 
+           focus:outline-none focus:ring-2 focus:ring-apple-blue/30 focus:border-apple-blue 
+           transition-all duration-200 text-apple-gray-dark placeholder-gray-400 bg-white;
+  }
+  .nav-link {
+    @apply text-apple-gray-mid hover:text-apple-gray-dark transition-colors duration-200 text-sm font-medium;
+  }
+  .section-title {
+    @apply text-3xl font-semibold text-apple-gray-dark tracking-tight;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .skeleton {
+    @apply bg-gradient-to-r from-gray-100 via-gray-200 to-gray-100 
+           bg-[length:200%_100%] animate-shimmer rounded-lg;
+  }
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* Custom scrollbar for horizontal scroll */
+.scroll-snap-x { scroll-snap-type: x mandatory; }
+.scroll-snap-start { scroll-snap-align: start; }
+
+/* Smooth image loading */
+img { transition: opacity 0.3s ease; }
+img[loading] { opacity: 0; }
+img.loaded { opacity: 1; }
+
+/* Number input arrows hide */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
